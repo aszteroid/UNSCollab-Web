@@ -1,4 +1,4 @@
-# UNSCollab 🚀
+# UNSCollab 
 
 **UNSCollab** adalah platform kolaborasi mahasiswa berbasis web yang dirancang khusus untuk memfasilitasi pencarian tim proyek, manajemen magang, serta validasi dokumen pendukung secara terintegrasi. Proyek ini dibangun menggunakan **Laravel 11**, **Vite**, dan memanfaatkan **Supabase (PostgreSQL & Storage)** sebagai backend database serta penyimpanan awan, serta dideploy secara serverless di **Vercel**.
 
