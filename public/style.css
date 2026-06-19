@@ -1,0 +1,444 @@
+/* ==========================================================================
+   RESET & BASE STYLES
+   ========================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    background-color: #f8f9fa;
+    background-size: cover;
+    background-position: center;
+}
+
+/* ==========================================================================
+   LAYOUT & CONTAINERS
+   ========================================================================== */
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    margin-left: 248px; /* Disinkronkan dengan ukuran width sidebar */
+    padding: 2rem;
+}
+
+.row {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ==========================================================================
+   SIDEBAR COMPONENTS
+   ========================================================================== */
+.sidebar {
+    width: 248px;
+    min-height: 100vh;
+    background: #f0f9fc; /* Latar belakang soft cyan asli tetap dipertahankan */
+    border-right: 1px solid rgba(31, 171, 225, 0.1); /* Border asli */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; 
+    left: 0;
+    z-index: 200;
+    transition: transform .25s ease;
+}
+
+.sidebar-brand {
+    padding: 20px 18px 16px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    border-bottom: 1px solid rgba(31, 171, 225, 0.1);
+}
+
+.nav-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+    color: #8c9ba5; /* Warna teks label asli */
+    padding: 14px 18px 5px;
+}
+
+/* Style untuk teks pembagi alternatif */
+.sidebar-heading {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    color: #8c9ba5;
+    padding: 0.5rem 1rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.nav-link-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 9px 12px;
+    margin: 2px 8px;
+    border-radius: 10px; /* Rounded m3 sesuai preferensi figma */
+    color: #6c757d; /* Warna teks pasif asli */
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    text-decoration: none;
+    transition: all .15s;
+    position: relative;
+}
+
+.nav-link-item i { 
+    font-size: 15px; 
+    flex-shrink: 0; 
+}
+
+.nav-link-item:hover { 
+    background: rgba(31, 171, 225, 0.05); 
+    color: #1FABE1; 
+}
+
+.nav-link-item.active { 
+    background: rgba(31, 171, 225, 0.1); /* Background aktif asli */
+    color: #1FABE1; /* Warna brand utama asli */
+    font-weight: 600; 
+}
+
+.nav-link-item.active::before {
+    content: '';
+    position: absolute;
+    left: -8px; /* Posisi indikator vertikal */
+    top: 25%; 
+    bottom: 25%;
+    width: 3px; 
+    background: #1FABE1; /* Warna indikator vertikal asli */
+    border-radius: 0 3px 3px 0;
+}
+
+.nav-badge {
+    margin-left: auto;
+    font-size: 10px;
+    font-weight: 700;
+    padding: 1px 6px;
+    border-radius: 20px;
+}
+
+/* Varian warna badge menu */
+.pill-blue { background: rgba(31, 171, 225, 0.15); color: #1FABE1; }
+.pill-red  { background: rgba(220, 53, 69, 0.15); color: #dc3545; }
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 12px 8px;
+    border-top: 1px solid rgba(31, 171, 225, 0.1);
+}
+
+/* ==========================================================================
+   TOP HEADER STYLES
+   ========================================================================== */
+.top-header {
+    background-color: #ffffff;
+    padding: 1.25rem 2rem; 
+    margin-left: -2rem;    /* Mengimbangi padding dari main-content */
+    margin-right: -2rem;   /* Agar header memanjang penuh ke kanan-kiri */
+    margin-top: -2rem;     /* Menempel pas ke bagian atas */
+    margin-bottom: 2rem;   /* Jarak ke konten di bawahnya */
+    border-bottom: 1px solid rgba(31, 171, 225, 0.1);
+}
+
+.profile-avatar {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border: 2px solid rgba(31, 171, 225, 0.2);
+    padding: 2px;
+}
+
+/* ==========================================================================
+   CARDS & UTILITIES
+   ========================================================================== */
+/* Glassmorphism Card */
+.card {
+    background: rgba(255,255,255,0.75);
+    backdrop-filter: blur(10px);
+    border: none;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+/* Custom Card Figma */
+.custom-card {
+    border: none;
+    border-radius: 10px; /* Presisi figma */
+    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
+    transition: 0.3s;
+    background-color: #ffffff;
+}
+
+.custom-card:hover {
+    transform: translateY(-5px);
+}
+
+/* ==========================================================================
+   FORMS & INPUT GROUPS
+   ========================================================================== */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    color: #333;
+    padding: 10px 12px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.form-control:focus {
+    background-color: white;
+    border-color: #0dcaf0;
+    color: #333;
+    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+}
+
+.form-control::placeholder {
+    color: #999;
+}
+
+/* Input group styling */
+.input-group {
+    position: relative;
+}
+
+.input-group .form-control {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    color: #333;
+    padding-right: 40px;
+}
+
+.input-group .form-control:focus {
+    background-color: white;
+    border-color: #0dcaf0;
+    box-shadow: 0 0 0 0.25rem rgba(13, 202, 240, 0.25);
+}
+
+.input-group .btn-outline-secondary {
+    background-color: rgba(255, 255, 255, 0.9);
+    border: 1px solid #ddd;
+    border-left: none;
+    color: #666;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.input-group .btn-outline-secondary:hover {
+    background-color: white;
+    color: #0dcaf0;
+    border-color: #0dcaf0;
+}
+
+.input-group .btn-outline-secondary:focus {
+    box-shadow: none;
+    border-color: #0dcaf0;
+}
+
+/* ==========================================================================
+   BUTTONS & ACTIONS
+   ========================================================================== */
+.btn-info {
+    background-color: #0dcaf0;
+    border: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-info:hover {
+    background-color: #0ba5d8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(13, 202, 240, 0.3);
+}
+
+.btn-info:disabled {
+    background-color: #0dcaf0;
+    opacity: 0.7;
+}
+
+.btn-action {
+    border-radius: 10px;
+    font-weight: 600;
+}
+
+.button-kustom {
+    background-color: #1FABE1;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.5s, transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.button-kustom:hover {
+    background-color: #168cb9;
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(31, 171, 225, 0.3);
+}
+
+/* Skema warna dinamis utama #1FABE1 */
+.bg-custom-blue {
+    background-color: #1FABE1 !important;
+    color: #fff !important;
+}
+
+.text-custom-blue {
+    color: #1FABE1 !important;
+}
+
+.btn-custom-blue {
+    background-color: #1FABE1 !important;
+    border-color: #1FABE1 !important;
+    color: #fff !important;
+}
+
+.btn-custom-blue:hover {
+    background-color: #158dbb !important;
+    border-color: #158dbb !important;
+    color: #fff !important;
+}
+
+.btn-outline-custom {
+    color: #1FABE1 !important;
+    border-color: #1FABE1 !important;
+    background-color: transparent;
+}
+
+.btn-outline-custom:hover {
+    background-color: #1FABE1 !important;
+    border-color: #1FABE1 !important;
+    color: #fff !important;
+}
+
+/* ==========================================================================
+   ALERTS, BADGES & STATUS
+   ========================================================================== */
+#alertContainer {
+    margin-bottom: 20px;
+}
+
+.alert {
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    animation: slideDown 0.3s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.alert-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    border-left: 4px solid #198754;
+    color: #0f5132;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-left: 4px solid #dc3545;
+    color: #842029;
+}
+
+.alert-warning {
+    background-color: rgba(255, 193, 7, 0.1);
+    border-left: 4px solid #ffc107;
+    color: #664d03;
+}
+
+.alert-info {
+    background-color: rgba(13, 202, 240, 0.1);
+    border-left: 4px solid #0dcaf0;
+    color: #055160;
+}
+
+.alert strong {
+    font-weight: 600;
+}
+
+.btn-close {
+    opacity: 0.7;
+}
+
+.btn-close:hover {
+    opacity: 1;
+}
+
+.badge-pending {
+    background-color: #fff4e5;
+    color: #ff9800;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.badge-approved {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    border-radius: 10px;
+    padding: 6px 12px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* ==========================================================================
+   RESPONSIVE DESIGN (MEDIA QUERIES)
+   ========================================================================== */
+@media (max-width: 768px) {
+    .card {
+        max-width: 100%;
+        margin: 20px;
+    }
+
+    .row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .col {
+        width: 100%;
+    }
+
+    #imageSection {
+        display: none;
+    }
+    
+    /* Tambahan opsional: sesuaikan main-content saat layar kecil jika diperlukan */
+    .main-content {
+        margin-left: 0; 
+        padding: 1rem;
+    }
+}
