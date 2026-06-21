@@ -10,7 +10,7 @@
 - **Dashboard Dinamis**: Halaman kustom untuk memantau status magang, tim aktif, dan data statistik platform.
 - **Daftar & Validasi Magang**: Fitur bagi mahasiswa untuk mendaftar lowongan magang beserta unggah dokumen pendukung (PDF/Gambar).
 - **Manajemen Tim (Daftar Team)**: Membantu mahasiswa mencari atau membentuk tim kolaborasi proyek intra-kampus.
-- **Supabase Storage Integration**: Penyimpanan aman untuk logo perusahaan dan dokumen pendukung magang langsung ke cloud storage.
+- **Supabase Storage Integration**: Penyimpanan untuk dokumen pendukung magang langsung ke cloud storage.
 - **Validasi Admin**: Halaman khusus admin untuk menyetujui, menolak, atau memvalidasi berkas pendaftaran magang.
 
 ---
