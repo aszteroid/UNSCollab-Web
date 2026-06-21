@@ -20,7 +20,6 @@
 - **Framework**: Laravel 11 (PHP 8.3+)
 - **Frontend Asset Bundler**: Vite
 - **Database**: PostgreSQL (Hosted on Supabase)
-- **Object Storage**: Supabase Buckets (`logo-comp`, `dokumen-pendukung`)
 - **Deployment Platform**: Vercel (Serverless PHP Environment)
 
 ---
